@@ -1,0 +1,41 @@
+/* Make sure to import this file inside Navbar.jsx: import "./Navbar.css"; */
+
+.navbar {
+  position: fixed;        /* 👈 stays at the top even when scrolling */
+  top: 0;                 
+  left: 0;                
+  width: 100%;            /* 👈 spans full screen width */
+  height: 70px;           /* adjust as you like */
+  background-color: #111; /* dark background for contrast */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;          /* keeps navbar above other elements */
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 2rem;              /* spacing between links */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-list a:hover {
+  color: #ffb300;         /* hover color */
+}
+
+.nav-logo {
+  height: 50px;
+  vertical-align: middle;
+}
