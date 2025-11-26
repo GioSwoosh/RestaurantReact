@@ -12,6 +12,26 @@ function Reservation() {
     const handleChanges = (e) => {
       setFormData({...formData, [e.target.name]: e.target.value})
     }
+
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+
+      try {
+        const response = await fetch("/api/reservations", {
+          method: "POST",
+          headers: { "Content-Type": "application/json"},
+          body: JSON.stringify(formData),
+        });
+        if (response.ok) {
+          alert("Reservation made successfully");
+        } else {
+          alert("There was an issue making your reservation");
+        }
+      } catch(error) {
+        console.error("Error", error);
+        alert("Server error please try again")
+      }
+    }
     const genTimeSlots = () => {
         const slots = []
         for(let hour = 9; hour < 21; hour++) {
@@ -28,7 +48,7 @@ function Reservation() {
   return (
     <div>
       <div>
-        <form action="">
+        <form onSubmit={handleSubmit}>
           <h2>Reserve a Table</h2>
           <h1>
             Dine with Us <span>Reserve Now</span>
