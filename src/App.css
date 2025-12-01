@@ -1,0 +1,78 @@
+
+:root {
+  --dd-red: #1e3a8a;         
+  --dd-red-dark: #1e3a8a;     
+  --dd-red-light: #e2e8f0;    
+
+  --text-dark: #1d1d1f;
+  --text-muted: #6e6e73;
+
+  --bg-light: #f8f8f8;
+  --card-bg: #ffffff;
+
+  --radius-pill: 999px;
+  --radius-card: 22px;
+
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 14px 40px rgba(0, 0, 0, 0.12);
+
+  --shadow-primary: rgba(30, 58, 138, 0.25);   
+--shadow-primary-hover: rgba(30, 58, 138, 0.35); 
+
+}
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
+    sans-serif;
+}
+
+.app-main {
+  padding-top: 80px;
+}
+
+
+
+.btn {
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.15s ease;
+}
+
+
+.btn-primary {
+  background-color: var(--dd-red);
+  color: #fff;
+  box-shadow: 0 8px 20px var(--shadow-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--dd-red-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px var(--shadow-primary-hover);
+}
+
+.btn-outline {
+  background-color: #fff;
+  border: 2px solid var(--dd-red);
+  color: var(--dd-red);
+  box-shadow: 0 8px 20px var(--shadow-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--dd-red-light);
+  box-shadow: 0 12px 28px var(--shadow-primary-hover);
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

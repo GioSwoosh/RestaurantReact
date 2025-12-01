@@ -1,4 +1,5 @@
 import { useState} from "react"
+import "./Reservation.css"
 
 function Reservation() {
     const [formData, setFormData] = useState({
@@ -46,57 +47,102 @@ function Reservation() {
         return slots
     }
   return (
-    <div>
-      <div>
+    <div className="reservation-page">
+      <div className="reservation-card">
         <form onSubmit={handleSubmit}>
-          <h2>Reserve a Table</h2>
+          <p className="eyebrow">Reserve a Table</p>
           <h1>
-            Dine with Us <span>Reserve Now</span>
+            Dine with us <span>any night.</span>
           </h1>
-          <div>
-            <div>
-              <label htmlFor="">Full Name</label>
-              <input type="text" name="name" value={formData.name} onChange={handleChanges} placeholder="Full Name" required />
+
+          <div className="reservation-grid">
+            <div className="form-field">
+              <label>Full Name</label>
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChanges}
+                placeholder="Full Name"
+                required
+              />
             </div>
-            <div>
-              <label htmlFor="">Email</label>
-              <input type="email" name="email" value={formData.email} onChange={handleChanges} placeholder="Email" required />
+
+            <div className="form-field">
+              <label>Email</label>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChanges}
+                placeholder="Email"
+                required
+              />
             </div>
-            <div>
-              <label htmlFor="">Phone Number</label>
-              <input type="tel" name="phone" value={formData.phone} onChange={handleChanges} placeholder="Phone Number" required />
+
+            <div className="form-field">
+              <label>Phone Number</label>
+              <input
+                type="tel"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChanges}
+                placeholder="Phone Number"
+                required
+              />
             </div>
-            <div>
-              <label htmlFor="">Reservation Date</label>
-              <input type="date" name="date" value={formData.date} onChange={handleChanges} required />
+
+            <div className="form-field">
+              <label>Reservation Date</label>
+              <input
+                type="date"
+                name="date"
+                value={formData.date}
+                onChange={handleChanges}
+                required
+              />
             </div>
-            <div>
-              <label htmlFor="">Time of Reservation</label>
-              <select name="time" value={formData.time} onChange={handleChanges} required>
+
+            <div className="form-field">
+              <label>Time of Reservation</label>
+              <select
+                name="time"
+                value={formData.time}
+                onChange={handleChanges}
+                required
+              >
                 <option value="">Select Time</option>
                 {genTimeSlots().map((slot, index) => (
-                    <option key= {index} value={slot}>{slot}</option>
+                  <option key={index} value={slot}>
+                    {slot}
+                  </option>
                 ))}
               </select>
             </div>
-            <div>
-              <label htmlFor="">Number of Guests</label>
-              <select name="guests" value={formData.guests} onChange={handleChanges}>
-                {[
-                  ...Array(10).keys().map((i) => (
-                      <option key={i + 1} value={i + 1}>
-                        {i + 1} Guest(s)
-                      </option>
-                    )),
-                ]}
+
+            <div className="form-field">
+              <label>Number of Guests</label>
+              <select
+                name="guests"
+                value={formData.guests}
+                onChange={handleChanges}
+              >
+                {[...Array(10).keys()].map((i) => (
+                  <option key={i + 1} value={i + 1}>
+                    {i + 1} Guest(s)
+                  </option>
+                ))}
               </select>
             </div>
-            <button type="submit">Book Now</button>
           </div>
+
+          <button className="btn btn-primary reservation-submit" type="submit">
+            Book Now
+          </button>
         </form>
       </div>
     </div>
-  );
+  )
 }
 
 export default Reservation

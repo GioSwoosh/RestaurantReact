@@ -1,20 +1,37 @@
 import assets from '../../assets/assets.js'
+import './Menu.css'
 
 function MenuElements() {
   return (
-    <div>
+    <div className="menu-page">
+      <header className="menu-header">
+        <h1>Menu</h1>
+        <p>Browse our categories and pick your favorites.</p>
+      </header>
+
       {assets.map((category) => (
-        <div key={category.id}>
-          <h2>{category.category}</h2>
-          <ul>
+        <section className="menu-category" key={category.id}>
+          <h2 className="menu-category-title">{category.category}</h2>
+          <ul className="menu-items">
             {category.items.map((item) => (
-              <li key={item.id}>
-                <strong>{item.name}</strong> — ${item.price.toFixed(2)}
-                <p>{item.description}</p>
+              <li className="menu-item" key={item.id}>
+                <div className="menu-item-main">
+                  <div>
+                    <div className="menu-item-name">{item.name}</div>
+                    <p className="menu-item-description">
+                      {item.description}
+                    </p>
+                  </div>
+                  <div className="menu-item-meta">
+                    <span className="menu-item-price">
+                      ${item.price.toFixed(2)}
+                    </span>
+                  </div>
+                </div>
               </li>
             ))}
           </ul>
-        </div>
+        </section>
       ))}
     </div>
   )

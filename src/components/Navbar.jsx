@@ -11,7 +11,7 @@ function Navbar() {
                     <Link to= "menu">Menu</Link>
                 </li>
                 <li>
-                    <Link to= "/"><img src={viteLogo} className="logo" alt="Vite logo" /></Link>
+                    <Link to= "/"><img src={viteLogo} className="nav-logo" alt="Vite logo" /></Link>
                 </li>
                 <li>
                     <Link to= "reservation">Reservation</Link>
